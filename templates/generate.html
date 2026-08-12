@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Email | WriteAI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generate.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="/" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="card">
+
+            <h1>✨ AI Email Generator</h1>
+
+            <p>Generate professional emails in seconds using AI.</p>
+
+            <form id="emailForm">
+
+                <!-- Email Type -->
+
+                <label for="emailType">📧 Email Type</label>
+
+                <select id="emailType" required>
+                    <option value="">-- Select Email Type --</option>
+                    <option>Leave Request</option>
+                    <option>Job Application</option>
+                    <option>Meeting Request</option>
+                    <option>Complaint</option>
+                    <option>Apology</option>
+                    <option>Thank You</option>
+                    <option>Follow-up</option>
+                    <option>Invitation</option>
+                    <option>Custom</option>
+                </select>
+
+                <!-- Tone -->
+
+                <label>🎭 Select Tone</label>
+
+                <div class="tone">
+
+                    <label>
+                        <input type="radio" name="tone" value="Professional" checked>
+                        Professional
+                    </label>
+
+                    <label>
+                        <input type="radio" name="tone" value="Formal">
+                        Formal
+                    </label>
+
+                    <label>
+                        <input type="radio" name="tone" value="Friendly">
+                        Friendly
+                    </label>
+
+                    <label>
+                        <input type="radio" name="tone" value="Casual">
+                        Casual
+                    </label>
+
+                </div>
+
+                <!-- Description -->
+
+                <label for="description">✍ Describe your email</label>
+
+                <textarea
+                    id="description"
+                    placeholder="Example: I need to request two days of leave because I have a fever. Please write a professional email to my manager."
+                    required>
+                </textarea>
+
+                <!-- Generate Button -->
+
+                <button type="submit" class="generate-btn">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Generate Email
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Output Section -->
+
+        <div class="output" id="outputSection">
+
+            <h2>📄 Generated Email</h2>
+
+            <div class="email-box" id="generatedEmail">
+
+                Your AI-generated email will appear here...
+
+            </div>
+
+            <div class="actions">
+
+                <button type="button" id="copyBtn">
+                    <i class="fa-solid fa-copy"></i>
+                    Copy
+                </button>
+
+                <button type="button" id="regenBtn">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Regenerate
+                </button>
+
+                <button type="button" id="downloadBtn">
+                    <i class="fa-solid fa-download"></i>
+                    Download
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/generate.js') }}"></script>
+
+</body>
+</html>

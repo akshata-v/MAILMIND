@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Checker | WriteAI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/grammer.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <a href="/" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Home
+    </a>
+
+    <div class="card">
+
+        <h1>✅ AI Grammar Checker</h1>
+
+        <p>
+            Paste your email below and let AI improve its grammar,
+            spelling and readability.
+        </p>
+
+        <form id="grammarForm">
+
+            <label>Your Email</label>
+
+            <textarea
+                id="userEmail"
+                placeholder="Paste your email here..."
+                required></textarea>
+
+            <button class="check-btn" type="submit">
+
+                <i class="fa-solid fa-spell-check"></i>
+
+                Check Grammar
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="output" id="outputSection">
+
+        <h2>Corrected Email</h2>
+
+        <div class="email-box" id="correctedEmail">
+
+        </div>
+
+        <div class="actions">
+
+            <button id="copyBtn">
+
+                <i class="fa-solid fa-copy"></i>
+
+                Copy
+
+            </button>
+
+           
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/grammer.js') }}"></script>
+
+</body>
+</html>
